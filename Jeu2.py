@@ -4,5 +4,6 @@ import random
 #from Accueil import username
 username="Eric"
 print("Bienvenue",username,"dans le monde de Aléatory ! Ici reigne la magie de l'aléatoire.")
-nombre = input("choisi un nombre compris entre 1 et 5. \n => ")
-print("Nombre choisi : ",nombre)
+cible = random.randint(1,100)
+print('La valeur choisie est ',cible)
+print('Tu as 5 essais pour tomber sur ',cible)

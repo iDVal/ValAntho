@@ -15,8 +15,8 @@ while reponse!="fin" and reponse!="exit":
     print('\n --------------------------------------')
     print(' - Bienvenue',username,'dans notre Jeux de Ouf   -')
     print(' -                                    -')
-    print(' -    => 1 : Substraction             -')
-    print(' -    => 2 : Aleatory                 -')
+    print(' -    => Substarction : 1             -')
+    print(' -    => Aleatory     : 2             -')
     print(' -                                    -')
     print(' - tapez "fin" ou "exit" pour sortir  -')
     print(' --------------------------------------') 
@@ -24,7 +24,7 @@ while reponse!="fin" and reponse!="exit":
     if reponse == "1":
         print('\n      Tu as choisi de jouer a Substraction')
         lance_prog=input(" Tape 'Entrée' pour lancer le jeu")
-        subprocess.call(["python.exe", "Jeu1.py"])
+        subprocess.call(["python.exe", "Substraction.py"])
     elif reponse == "2":
         print('\n      Tu as choisi de jouer a Aleatory')
         lance_prog=input(" Tape 'Entrée' pour lancer le jeu")
