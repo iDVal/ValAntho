@@ -6,7 +6,7 @@
     # D: 
     # cd D:\Anthony\Programmation\Python\Repository Git ValAntho
     # git init 
-    # git remote add origin https://github.com/iDVal/ValAntho.git
+    # git remote add origin 
 
 
 => Ouvrir une fenetre shell 

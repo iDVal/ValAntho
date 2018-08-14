@@ -21,7 +21,6 @@ for answer1 in('Substraction', 'Aleatory', 'non'):
  
         
 
-
 #Choix du jeu de la part de l'utilisateur
 gamechoice = input("Voulez vous jouer à Substraction ou Aleatory ? \n ->")
 
