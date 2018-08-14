@@ -37,4 +37,5 @@
     Puis on récupere les derniers updates du global
     # git pull
 
+    test eric
     
