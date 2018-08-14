@@ -36,3 +36,5 @@
     # git clean -df
     Puis on récupere les derniers updates du global
     # git pull
+
+    truncatechars_html
