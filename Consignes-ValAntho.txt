@@ -1,0 +1,38 @@
+
+=> Initialisation (pour la première fois sur votre PC local)
+    # git config --global user.name "Votre Nom Ici"
+    # git config --global user.email "votre_email@votre_email.com"
+
+    # D: 
+    # cd D:\Anthony\Programmation\Python\Repository Git ValAntho
+    # git init 
+    # git remote add origin https://github.com/iDVal/ValAntho.git
+
+
+=> Ouvrir une fenetre shell 
+    # (windows -> cmd)
+=> cd votre repertoire local repository 
+    # D: 
+    # cd D:\Anthony\Programmation\Python\Repository Git ValAntho
+=> Pour lister vos fichiers sur votre repo local 
+    # dir
+
+=> Pour récupérer les derniers updates du Git Global (Origin Master)
+    # D: 
+    # cd D:\Anthony\Programmation\Python\Repository Git ValAntho
+    # git pull origin master
+    
+=> A chaque fois que vous avez un update que vous validez comme correct et a pousser en reference sur le repository global
+    # D: 
+    # cd D:\Anthony\Programmation\Python\Repository Git ValAntho
+    # git add . 
+    # git commit -m "vos commentaires"
+    # git push -u origin master
+
+=> Si ca merde et messages d'erreur, sauvegarder ailleurs ses fichiers pour ne pas perdre es mises a jours faites en local
+    On peut faire un reset local
+    # git fetch origin master
+    # git reset -hard FETCH_HEAD
+    # git clean -df
+    Puis on récupere les derniers updates du global
+    # git pull
