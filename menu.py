@@ -1,31 +1,28 @@
-#Ce code concerne la page d'accueil, il permettra d'identifier l'utilisateur ainsi que choisir le jeux : Substration ou Aleatory.
-print("---BIENVENUE---\n")
+from tkinter import *
 
-#Choix du pseudo de l'utilisateur
-username = input("Veuillez indiquer votre pseudonyme : \n ->")
+menu = Tk()
 
-#Demande d'informations sur un jeu de la part de l'utilisateur, ou non.
-print("\n Bonjour " + username + " vous voici à présent dans le menu de séléction de jeux.\n Indiquez le jeu sur lequel vous voulez avoir des informations : Substraction ou Aleatory ?")
-answer1 = input("Si vous ne voulez pas d'informations, tapez non \n ->")
 
-for answer1 in('Substraction', 'Aleatory', 'non'):
-        if answer1 == 'Substraction':
-                 print("Le jeu substraction est un jeu dont l'objectif est d'atteindre 0 avant l'ordinateur, et cela par soustraction de valeur comprise entre 1 et 3, en partant de 50. ")
-                 break
-        if answer1 == 'Aleatory':
-                 print("Désolé, nous manquons d'informations sur ce jeu pour le moment, réessayez plus tard.")
-                 break
-        if answer1 == 'non':
-                  print("Compris, passons à la sélection du jeu auquel vous voulez jouer.")
-                  break
- 
-        
+menu.title("Zombie")
+menu.geometry("1920x1080")
 
-#Choix du jeu de la part de l'utilisateur
-gamechoice = input("Voulez vous jouer à Substraction ou Aleatory ? \n ->")
+canv = Canvas(menu, width=1200, height=675, bg='green')
+#canv.grid(row=0, column=0)
+#c = Canvas(menu,)
+canv.pack()
 
-if gamechoice =='Substraction':
-        import Substraction
-if gamechoice == 'Aleatory':
-        print("Nous sommes désolé, ce jeu n'est pas disponible pour le moment, réessayez plus tard.")
-    
+fond = PhotoImage(file="Fondzombie3.gif")
+canv.create_image(600, 337.5, image=fond)
+
+
+# bouton cliquable (50, 50)
+#canv = Canvas(menu, width=128, height=128, bg='blue')
+#canv.pack()
+image_button = PhotoImage (file="quitter.gif")
+#canv.create_image(64, 64, image=image_button)
+bouton_quitter = Button(menu, image=image_button, command=menu.quit)
+bouton_quitter.pack()
+
+Label(menu, text="Anthony").pack()
+
+menu.mainloop()
