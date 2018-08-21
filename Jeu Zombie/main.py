@@ -14,28 +14,40 @@ Zombie : tue UN joueur chaque nuit avec l'accord de son coéquipier
 0 = plusieurs
 1 = unique
 """
+saisie_int_ok=0
+nb_players=0
+while saisie_int_ok != 1 or nb_players<1 or nb_players>10:   # keep looping until we break out of the loop
+    'cls'
+    import os
+    clear = lambda: os.system('cls')
+    clear()
 
-'cls'
-print("Bienvenue dans Zombie, il s'agit d'un jeu de rôle dans lequel s'affronte d'un côté les zombies et de l'autre les villageois!")
-print("\n Voici les différents rôles : \n ")
-print("Citoyen : vote compte double \n Necromancien : Possibilite de tuer et/ou de ramener a la vie UNE personne (ainsi qu'interroger un mort) \n Voyante : peut savoir à chaque nuit UN role d'un joueur \n Chef Zombie : tue UN joueur ennemie chaque nuit avec l'accord de son coéquipier + LA premiere victime devient le zombie contaminé \n Assassin : lors de sa mort il choisit de tuer UNE personne avec lui \n Cupidon : lie 2 joueurs dans l'amour et la mort => les 2 amoureux devront etre les SEULS survivants \n Zombie : tue UN joueur chaque nuit avec l'accord de son coéquipier \n Lambda : non défini")
+    print("Bienvenue dans Zombie, il s'agit d'un jeu de rôle dans lequel s'affronte d'un côté les zombies et de l'autre les villageois!")
+    print("\n Voici les différents rôles : \n ")
+    print("Citoyen : vote compte double \n Necromancien : Possibilite de tuer et/ou de ramener a la vie UNE personne (ainsi qu'interroger un mort) \n Voyante : peut savoir à chaque nuit UN role d'un joueur \n Chef Zombie : tue UN joueur ennemie chaque nuit avec l'accord de son coéquipier + LA premiere victime devient le zombie contaminé \n Assassin : lors de sa mort il choisit de tuer UNE personne avec lui \n Cupidon : lie 2 joueurs dans l'amour et la mort => les 2 amoureux devront etre les SEULS survivants \n Zombie : tue UN joueur chaque nuit avec l'accord de son coéquipier \n Lambda : non défini")
+    try:
+        nb_players = int(input("Indiquez le nombre de joueurs non bot : \n ->"))
+        saisie_int_ok=1
+    except ValueError:
+        print("erreur")
+
 
 #Création dynamique du tableau joueurs
-nb_players = int(input("Indiquez le nombre de joueurs non bot : \n ->"))
 nb_bot = int(10 - nb_players)
+tableau_players = []
+cpt_player=1
+while cpt_player != (nb_players+1):
+    player_name = input('Entrez le Nom ou le Pseudo du Joueur N°'+ str(cpt_player) +' : \n ->')
+    tableau_players.append(player_name)
+    cpt_player += 1
 
-while nb_players != 0:
-    player_name = input("Ton nom : \n ->")
-    tableau_players = []
-    tableau_players.append("player_name")
-    nb_players -= 1
-
-while nb_bot != 0:
-    bot_name = ("Bot",nb_bot)
+cpt_bot=1
+while cpt_bot != (nb_bot+1):
+    bot_name=('Bot'+ str(cpt_bot))
     tableau_players.append(bot_name)
-    nb_bot -= 1
+    cpt_bot += 1
 
-print (tableau_players,"\n")
+
 #Attribution des rôles
 import random
 
@@ -44,21 +56,21 @@ tableau_attribution = []
 for name in tableau_players:
     role_name_lu = random.choice(tableau_roles)
     role,nb_fois,nb_max = role_name_lu.split(":")
-    print(nb_fois)
-    if nb_fois == 0:
-        if nb_max != 0:
-            valeur=(name,":",role)
-            print (valeur,"\n")
+    if int(nb_fois) == 0:
+        if int(nb_max) != 0:
+            valeur=(str(name) +':'+ str(role))
             tableau_attribution.append(valeur) 
-            nb_max -= 1
+            nb_max = int(nb_max) - 1
             index = tableau_roles.index(role_name_lu)
-            tableau_roles[index] = (role,":",nb_fois,":",nb_max)
+            tableau_roles[index] = (str(role) +":"+ str(nb_fois) +":"+ str(nb_max))
         else:
             tableau_roles.remove(role_name_lu)
-    elif nb_fois == 1:
-        valeur=(name,":",role)
-        print (valeur,"\n")
+    elif int(nb_fois) == 1:
+        valeur=(str(name) +':'+ str(role))
         tableau_attribution.append(valeur)
         tableau_roles.remove(role_name_lu)
 
-print(tableau_attribution)
+print("\n------------------------------------------------------------------------------------------------------------------------------------------------------------")
+print ("tableau_players: ",tableau_players)
+print("tableau_attribution: ",tableau_attribution)
+print("--------------------------------------------------------------------------------------------------------------------------------------------------------------\n")
