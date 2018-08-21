@@ -40,7 +40,7 @@ while cpt_player != (nb_players+1):
     player_name = input('Entrez le Nom ou le Pseudo du Joueur N°'+ str(cpt_player) +' : \n ->')
     
     if cpt_player != 1 and (player_name in tableau_players):
-        print('Attention : le Nom ou le Pseudo ' +str(player_name) +'existe déja, merci de choisir un autre Nom')
+        print('Attention : le Nom ou le Pseudo ' +str(player_name) +' existe déja, merci de choisir un autre Nom')
     else:
         tableau_players.append(player_name)
         cpt_player += 1
